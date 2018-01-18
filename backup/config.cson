@@ -1,0 +1,54 @@
+"*":
+  "atom-material-ui":
+    colors:
+      abaseColor: "#1cfa67"
+      accentColor: "#84d498"
+      predefinedColor: "Green"
+    ui:
+      panelContrast: true
+  "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+  "autocomplete-python":
+    useKite: false
+  "color-picker":
+    preferredFormat: "HEX"
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-dark"
+    ]
+  editor:
+    fontSize: 16
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "df92a2cd-aebe-4e45-b16a-38c88245fb16"
+  "file-icons": {}
+  fonts:
+    fontFamily: "Iosevka"
+  "git-plus":
+    general: {}
+  "julia-client":
+    enableMenu: true
+    enableToolBar: true
+  minimap: {}
+  "seti-ui":
+    themeColor: "Purple"
+  "tool-bar":
+    position: "Left"
+    visible: false
+  "uber-juno":
+    disable: true
+  welcome:
+    showOnStartup: false
+".diff.source":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    tabLength: 4
+    tabType: "soft"
