@@ -27,6 +27,9 @@ bindsym $mod+Return exec xterm-kitty
 # start rofi
 bindsym $mod+d exec rofi -show run
 
+# start firefox
+bindsym $mod+F1 exec firefox
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -60,10 +63,10 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+bar split h
@@ -125,14 +128,6 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle # mute mic
 bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 
-# Screenshots
-# Screenshot fullscreen
-#bindsym Print exec "scrot -q 100 ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e ${HOME}'/google-cloud-sdk/bin/#gsutil cp -a public-read $f gs://misc.j3ss.co/screenshots/ && echo https://misc.j3ss.co/screenshots/$n | xclip -i -selection #clipboard'"
-# Screenshot with selection
-#bindsym $mod+Print exec "sleep 0.4; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e ${HOME}'/google-cloud-sdk/bin/gsutil cp -a public-read $f gs://misc.j3ss.co/screenshots/ && echo https://misc.j3ss.co/screenshots/$n | #xclip -i -selection clipboard'"
-# Screenshot current focused window
-#bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e ${HOME}'/google-cloud-#sdk/bin/gsutil cp -a public-read $f gs://misc.j3ss.co/screenshots/ && echo https://misc.j3ss.co/screenshots/$n | xclip -i -#selection clipboard'"
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -164,7 +159,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+shift+r mode "resize"
+bindsym $mod+Shift+r mode "resize"
 
 # auto run commands
 exec --no-startup-id conky
