@@ -47,6 +47,7 @@ let g:lessspace_enabled = 0
 
 " lightline theme
 let g:lightline = { 'colorscheme': 'challenger_deep'}
+set noshowmode
 
 " true colors
 if has('nvim') || has('termguicolors')
