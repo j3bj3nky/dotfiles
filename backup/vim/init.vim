@@ -12,6 +12,7 @@ Plug 'bfredl/nvim-ipy'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
 Plug 'rust-lang/rust.vim'
+Plug 'challenger-deep-theme/vim'
 
 
 call plug#end()
