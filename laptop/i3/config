@@ -9,7 +9,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 
-font pango:Iosevka Nerd Font 8
+font pango:Iosevka Nerd Font Regular 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -22,13 +22,15 @@ font pango:Iosevka Nerd Font 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm-kitty
+bindsym $mod+Return exec terminator
 
 # start rofi
 bindsym $mod+d exec rofi -show run
 
 # start firefox
-bindsym $mod+F1 exec firefox
+bindsym $mod+F1 exec firefox &
+# start chrome
+bindsym $mod+F2 exec google-chrome &
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -39,8 +41,14 @@ for_window [class="google-chrome"] floating enable
 for_window [class="Google-chrome"] floating enable
 for_window [class="Tor Browser"] floating enable
 
+# assign programs to certain windows
+assign [class="Firefox"] 2
+assign [class="google-chrome"] 2
+assign [class="Google-chrome"] 2
+assign [class="Tor Browser"] 2
+
 # lock screen
-bindsym $mod+l exec sflock
+bindsym $mod+l exec i3lock -c b294bb
 
 # no borders
 new_window none
@@ -131,7 +139,7 @@ bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym Control+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -161,9 +169,12 @@ mode "resize" {
 
 bindsym $mod+Shift+r mode "resize"
 
+bar {  
+        font pango:Iosevka Nerd Font Complete, Regular, 8
+	status_command i3status --config  ~/.config/status.conf
+}
+
 # auto run commands
-exec --no-startup-id conky
-exec --no-startup-id compton
 
 # run the merge for good colors
 # or put my own colors down here
