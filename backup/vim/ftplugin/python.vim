@@ -9,7 +9,6 @@ let python_highlight_all = 1
 let mapleader=","
 let maplocalleader="\\"
 
-
 let g:jedi#show_call_signatures = "0"
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
