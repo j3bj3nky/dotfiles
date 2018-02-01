@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.3a
+Type=Application
+Name=Windowchef
+Comment=Loads wot u need
+Exec=dex -a -s ~/.config/windowchef/autostart/
+DesktopNames=windowchef
+
