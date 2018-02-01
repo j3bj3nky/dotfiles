@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.6a
-Type=Application
-Name=Windowchef
-Comment=Loads wot u need
-Exec=windowchef
-TryExec=windowchef
-DesktopNames=windowchef
-
