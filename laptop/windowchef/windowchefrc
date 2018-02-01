@@ -18,3 +18,8 @@ waitron wm_config pointer_actions move resize_side resize_corner
 waitron wm_config pointer_modifier super
 waitron wm_config click_to_focus any
 
+sxhkd &
+lemonbar -p &
+i3status --config ~/.config/status-windowchef.conf
+compton --config ${HOME}/.config/compton/compton.conf -b
+feh --bg-scale ${HOME}/Pics/cybergamebak.jpg &
