@@ -21,9 +21,9 @@
 #define CLICK_TO_FOCUS  True      /* Focus an unfocused window when clicked */
 #define BORDER_WIDTH    1         /* window border width */
 #define SCRATCH_WIDTH   1         /* scratch window border width, 0 to disable */
-#define FOCUS           "#cccccc" /* focused window border color   */
-#define UNFOCUS         "#121212" /* unfocused window border color */
-#define SCRATCH         "#cc0000" /* scratchpad border color */
+#define FOCUS           "#1cfa67" /* focused window border color   */
+#define UNFOCUS         "#84d489" /* unfocused window border color */
+#define SCRATCH         "#1aa662" /* scratchpad border color */
 #define DESKTOPS        5         /* number of desktops - edit DESKTOPCHANGE keys to suit */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus on exec */
 #define MINWSZ          50        /* minimum window size in pixels */
@@ -65,9 +65,9 @@ static const AppRule rules[] = { \
  * window. The title of the scratchpad window should also match SCRPDNAME from
  * above
  */
-static const char *termcmd[] = { "xterm-kitty",     NULL };
+static const char *termcmd[] = { "Terminator",     NULL };
 static const char *menucmd[] = { "rofi", "-show", "run", NULL };
-static const char *lock[]    = { "sflock", NULL };
+static const char *lock[]    = { "i3lock", NULL };
 static const char *browsercmd= { "firefox", NULL };
 static const char *scrpcmd[] = { "xterm", "-T", "scratchpad", NULL };
 /* static const char *scrpcmd[] = { "urxvt", "-name", "scratchpad",  NULL }; */
