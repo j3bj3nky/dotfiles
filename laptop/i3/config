@@ -9,7 +9,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 
-font pango:Iosevka Nerd Font Regular 8
+font pango: Iosevka Nerd Font Regular Book
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -25,27 +25,32 @@ floating_modifier $mod
 bindsym $mod+Return exec terminator
 
 # start rofi
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/rofi.config
 
 # start firefox
 bindsym $mod+F1 exec firefox &
 # start chrome
-bindsym $mod+F2 exec google-chrome &
+bindsym $mod+F2 exec google-chrome-stable &
+
+# start WebStorm
+bindsym $mod+F3 exec webstorm &
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # skype, steam, wine: float Gimp
 for_window [class="Firefox"] floating enable
-for_window [class="google-chrome"] floating enable
+for_window [class="google-chrome-stable"] floating enable
 for_window [class="Google-chrome"] floating enable
 for_window [class="Tor Browser"] floating enable
+for_window [class="webstorm"] floating enable
 
 # assign programs to certain windows
 assign [class="Firefox"] 2
-assign [class="google-chrome"] 2
+assign [class="google-chrome-stable"] 2
 assign [class="Google-chrome"] 2
 assign [class="Tor Browser"] 2
+assign [class="webstorm"] 3
 
 # lock screen
 bindsym $mod+l exec i3lock -c b294bb
@@ -175,9 +180,8 @@ bar {
 }
 
 # auto run commands
-
+exec --no-startup-id feh --bg-scale ${HOME}/Pictures/cybergamebak.jpg
+exec --no-startup-id compton --config ${HOME}/.config/compton/compton.conf -b
 # run the merge for good colors
 # or put my own colors down here
 exec xrdb -merge $HOME/.Xresources
-exec xrdb -merge $HOME/.Xdefaults
-
