@@ -1,0 +1,53 @@
+!Fonts
+Xft.dpi: 96
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+! rofi
+rofi.font: FontForge Raise Regular 14
+rofi.terminal: terminator 
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
+
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+! special
+*.foreground:   #0099cc
+*.background:   #2a242e
+*.cursorColor:  #0099cc
+
+! black
+*.color0:       #4c4f53
+*.color8:       #4c4f53
+
+! red
+*.color1:       #b72d5c
+*.color9:       #b72d5c
+
+! green
+*.color2:       #20b759
+*.color10:      #20b759
+
+! yellow
+*.color3:       #cf2f41
+*.color11:      #cf2f41
+
+! blue
+*.color4:       #2fcfbd
+*.color12:      #2fcfbd
+
+! magenta
+*.color5:       #d24198
+*.color13:      #d24198
+
+! cyan
+*.color6:       #5e2559
+*.color14:      #5e2559
+
+! white
+*.color7:       #184d67
+*.color15:      #184d67
+

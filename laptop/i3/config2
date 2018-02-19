@@ -1,20 +1,20 @@
 # Colors and Customization 
-set $base00 #1d1f21
-set $base01 #282a2e
-set $base02 #373b41
-set $base03 #969896
-set $base04 #b4b7b4
-set $base05 #c5c8c6
-set $base06 #e0e0e0
-set $base07 #ffffff
-set $base08 #cc6666
-set $base09 #de935f
-set $base0A #f0c674
-set $base0B #b5bd68
-set $base0C #8abeb7
-set $base0D #81a2be
-set $base0E #b294bb
-set $base0F #a3685a
+set $base00 #4c4f53 
+set $base01 #b72d5c
+set $base02 #20b759
+set $base03 #cf2f41
+set $base04 #2fcfbd
+set $base05 #d24198
+set $base06 #5e2559
+set $base07 #184d67
+set $base08 #4c4f53
+set $base09 #b72d5c
+set $base0A #20b759
+set $base0B #cf2f41
+set $base0C #2fcfbd
+set $base0D #d24198
+set $base0E #5e2559
+set $base0F #184d67
 
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base05 $base0D $base00 $base0D $base0D
@@ -53,8 +53,8 @@ bindsym $mod+F1 exec firefox &
 bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/config
 
 assign [class="Firefox"] 2
-assign [class="google-chrome-stable"] 3
-assign [class="Google-chrome"] 3
+assign [class="google-chrome-stable"] 2
+assign [class="Google-chrome"] 2
 assign [class="Tor Browser"] 4
 
 # lock screen

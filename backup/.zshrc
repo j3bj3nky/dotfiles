@@ -103,6 +103,7 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias mullvad="sudo openvpn /etc/openvpn/mullvad_us.conf"
-
+export PATH="$PATH:$HOME/.local/bin"
 export GPG_TTY=$(tty)
 export PATH="/home/jeb/anaconda3/bin:$PATH"
+export BROWSER="/usr/bin/firefox"

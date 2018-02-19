@@ -1,36 +1,67 @@
-! special
-*.foreground:   #1cfa67
-*.background:   #2e3440
-*.cursorColor:  #1cfa67
+! Fonts
+Xft.dpi: 96
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
-! black
-*.color0:       #2e3440
-*.color8:       #707f9c
+! rofi
+rofi.font: FontForge Raise Regular 14
+rofi.terminal: terminator 
+rofi.ssh-client: ssh
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
 
-! red
-*.color1:       #84d498
-*.color9:       #84d498
+! Scheme: Chris Kempson (http://chriskempson.com)
 
-! green
-*.color2:       #1cfa67
-*.color10:      #1cfa67
+#define base00 #1d1f21
+#define base01 #282a2e
+#define base02 #373b41
+#define base03 #969896
+#define base04 #b4b7b4
+#define base05 #c5c8c6
+#define base06 #e0e0e0
+#define base07 #ffffff
+#define base08 #cc6666
+#define base09 #de935f
+#define base0A #f0c674
+#define base0B #b5bd68
+#define base0C #8abeb7
+#define base0D #81a2be
+#define base0E #b294bb
+#define base0F #a3685a
 
-! yellow
-*.color3:       #85fa8d
-*.color11:      #85fa86
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-! blue
-*.color4:       #1aa662
-*.color12:      #1aa662
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-! magenta
-*.color5:       #23ff77
-*.color13:      #23ff77
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
 
-! cyan
-*.color6:       #50fa7b
-*.color14:      #50fa7b
-
-! white
-*.color7:       #707f9c
-*.color15:      #ffffff
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06

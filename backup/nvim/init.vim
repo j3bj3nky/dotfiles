@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ternjs/tern_for_vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -51,7 +52,7 @@ nnoremap <space> za
 
 " PLUGIN SETTINGS
 " colorscheme
-colorscheme behelit
+colorscheme base16-default-dark
 
 " lessspace no startup
 let g:lessspace_enabled = 0
