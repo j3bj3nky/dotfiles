@@ -1,0 +1,30 @@
+[global_config]
+  title_transmit_fg_color = "#0099cc"
+  title_transmit_bg_color = "#141021"
+  title_inactive_fg_color = "#0099cc"
+  title_inactive_bg_color = "#141021"
+[keybindings]
+  split_horiz = <Shift><Super>underscore
+  split_vert = <Super>backslash
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    font = Bitstream Terminal 10
+    palette = "#141021:#b72d5c:#20b759:#cf2f41:#2fcfbd:#d24198:#93cd93:#2fcfbd:#141021:#b72d5c:#20b759:#cf2f41:#2fcfbd:#d24198:#93cd93:#2fcfbd"
+    foreground_color = "#0099cc"
+    background_color = "#141021"
+    cursor_color = "#0099cc"
+    scroll_on_output = True
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False

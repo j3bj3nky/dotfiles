@@ -1,0 +1,220 @@
+[colors]
+
+	my_background 	= #141021
+	my_foreground 	= #0099cc
+	my_color0	= #141021
+	my_color1	= #b72d5c
+	my_color2	= #20b759
+	my_color3	= #cf2f41
+	my_color4	= #2fcfbd
+	my_color5	= #d24198
+	my_color6	= #93cd93
+	my_color7	= #2fcfbd
+	my_color8	= #141021
+	my_color9	= #b72d5c
+	my_color10	= #20b759
+	my_color11	= #cf2f41
+	my_color12	= #2fcfbd
+	my_color13	= #d24198
+	my_color14	= #93cd93
+	my_color15      = #2fcfbd
+	
+[bars]
+
+[bar/base]
+	width    = 100%
+	height   = 18
+	offset-x = 0
+	offset-y = 0
+
+	background = ${colors.my_background}
+	foreground = ${colors.my_foreground}
+	
+	font-0 = DejaVu Sans Mono:pixelsize=08
+	font-1 = Icons:pixelsize=08
+
+	module-margin = 2
+
+	line-size = 2
+	line-color = ${colors.my_color0}
+
+	modules-left   = workspaces 
+	modules-center = xwindow
+	modules-right  = vpn network volume battery date
+
+	fixed-center = true
+
+	wm-restack = i3
+
+[settings]
+
+	format-underline = ${colors.my_color0}
+
+[modules]
+
+[module/vpn]
+	type = custom/script
+	exec = echo vpn
+	exec-if = pgrep -f "sudo openvpn /etc/openvpn/mullvad_us.conf"
+	interval = 5
+	format-background = ${colors.my_background}
+	format-foreground = ${colors.my_foreground}
+	format-underline = ${colors.my_color0}
+
+[module/wired-network]
+	type = internal/network
+	interface = enp0s25
+
+[module/network]
+	type          = internal/network
+	interface     = wlp3s0
+	ping-interval = 3 
+	
+	
+	format-connected = <label-connected>
+
+
+	label-connected            = %essid%
+	label-connected-background = ${colors.my_background}
+	label-connected-foreground = ${colors.my_foreground}
+	label-connected-padding    = 1
+
+
+	format-disconnected = <label-disconnected>
+
+
+	label-disconnected            = DISCONNECTED
+	label-disconnected-background = ${colors.my_background}
+	label-disconnected-foreground = ${colors.my_foreground}
+	label-disconnected-padding    = 1
+
+
+
+[module/xwindow]
+	type = internal/xwindow
+	label = %title%
+	label-maxlen = 60
+	format-background = ${colors.my_background}
+	format-foreground = ${colors.my_foreground}
+	format-underline = ${colors.my_color0}
+
+[module/date]
+	type     = internal/date
+	interval = 1.0
+	date     = "%a %d.%m.%Y"
+	date-alt = 
+	time     = "%H:%M"
+	time-alt = 
+	label    = %time% %date%
+
+	format         = <label>
+	format-padding = 0
+
+
+	label-background = ${colors.my_background}
+	label-foreground = ${colors.my_foreground}
+	label-padding    = 0
+
+[module/battery]
+	type          = internal/battery
+	full-at       = 99
+	battery       = BAT0
+	adapter       = AC0
+	poll-interval = 5
+
+	format-charging = <label-charging>
+
+
+	label-charging            = %percentage%%
+	label-charging-background = ${colors.my_background}
+	label-charging-foreground = ${colors.my_foreground}
+	label-charging-padding    = 1
+
+	format-discharging = <label-discharging>
+
+	label-discharging            = %percentage%%
+	label-discharging-background = ${colors.my_background}
+	label-discharging-foreground = ${colors.my_foreground}
+	label-discharging-padding    = 1
+
+	format-full = <label-full>
+
+	label-full            = %percentage%%
+	label-full-background = ${colors.my_backround}
+	label-full-foreground = ${colors.my_foreground}
+	label-full-padding    = 1
+
+[module/volume]
+	type          = internal/volume
+	format-volume = <label-volume>
+
+	label-volume            = %percentage%%
+	label-volume-background = ${colors.my_background}
+	label-volume-foreground = ${colors.my_foreground}
+	label-volume-padding    = 1
+
+	format-muted = <label-muted>
+
+	label-muted            = 0%
+	label-muted-foreground = ${colors.my_foreground}
+	label-muted-background = ${colors.my_background}
+	label-muted-padding    = 1
+
+	format-volume-padding = 0
+	format-muted-padding  = 0
+
+
+[module/essid]
+	inherit = module/network
+
+	format-connected = <label-connected>
+
+	label-connected            = %essid%
+	label-connected-background = ${colors.my_background}
+	label-connected-foreground = ${colors.my_foreground}
+	label-connected-padding    = 1
+
+	ramp-signal-background    = ${colors.essid_p_bg}
+	ramp-signal-foreground    = ${colors.my_foreground}
+	ramp-connected-foreground = ${colors.my_foreground}
+	ramp-signal-padding       = 1
+
+	format-disconnected = <label-disconnected>
+
+	label-disconnected            = DISCONNECTED
+	label-disconnected-background = ${colors.my_background}
+	label-disconnected-foreground = ${colors.my_foreground}
+	label-disconnected-padding    = 1
+
+[module/workspaces]
+	type = internal/i3
+	format = <label-state> <label-mode>
+	wrapping-scroll = false
+	fuzzy-match = true
+
+	label-unfocused-background = ${colors.my_background}
+	label-unfocused-foreground = ${colors.my_foreground}
+	label-unfocused-underline = ${colors.my_background}
+
+	label-mode = %mode%
+	label-mode-padding = 2
+	label-mode-background = ${colors.my_color0}
+
+	label-focused = %name%
+	label-focused-foreground = ${colors.my_foreground}
+	label-focused-background = ${colors.my_background}
+	label-focused-underline = ${colors.my_color0}
+	label-focused-padding = 2
+
+	label-unfocused = %name%
+	label-unfocused-padding = 2
+
+	label-visible = %name%
+	label-visible-underline = ${colors.my_foreground}
+	label-visible-padding = 2
+
+	label-urgent = %name%
+	label-urgent-foreground = ${colors.my_foreground}
+	label-urgent-background = ${colors.my_background}
+	label-urgent-underline = ${colors.my_color8}
+	label-urgent-padding = 2

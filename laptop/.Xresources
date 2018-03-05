@@ -7,21 +7,19 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 ! rofi
-rofi.font: FontForge Raise Regular 14
+rofi.font: DejaVu Sans Mono 14 
 rofi.terminal: terminator 
 rofi.ssh-client: ssh
 rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
 
-! Scheme: Chris Kempson (http://chriskempson.com)
-
 ! special
 *.foreground:   #0099cc
-*.background:   #2a242e
+*.background:   #141021
 *.cursorColor:  #0099cc
 
 ! black
-*.color0:       #4c4f53
-*.color8:       #4c4f53
+*.color0:       #141021
+*.color8:       #141021
 
 ! red
 *.color1:       #b72d5c
@@ -44,10 +42,10 @@ rofi.ssh-command: {terminal} -e "{ssh-client} {host}"
 *.color13:      #d24198
 
 ! cyan
-*.color6:       #5e2559
-*.color14:      #5e2559
+*.color6:       #93cd93
+*.color14:      #93cd93
 
 ! white
-*.color7:       #184d67
-*.color15:      #184d67
+*.color7:       #2fcfbd
+*.color15:      #2fcfbd
 

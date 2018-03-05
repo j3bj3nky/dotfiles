@@ -1,0 +1,175 @@
+# Colors and Customization 
+set $base00 #141021 
+set $base01 #b72d5c
+set $base02 #20b759
+set $base03 #cf2f41
+set $base04 #2fcfbd
+set $base05 #d24198
+set $base06 #93cd93
+set $base07 #2fcfbd
+set $base08 #141021
+set $base09 #b72d5c
+set $base0A #20b759
+set $base0B #cf2f41
+set $base0C #2fcfbd
+set $base0D #d24198
+set $base0E #93cd93
+set $base0F #2fcfbd
+
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
+new_window pixel 3
+new_float  pixel 3
+
+font pango: DejaVu Sans Mono 8 
+
+
+# Variables 
+set $mod Mod4
+set $terminal terminator 
+set $workspace1  "1"
+set $workspace2  "2"
+set $workspace3  "3"
+set $workspace4  "4"
+set $workspace5  "5"
+set $workspace6  "6"
+set $workspace7  "7"
+set $workspace8  "8"
+set $workspace9  "9"
+
+
+
+# Window Movement (excluding workspaces) 
+bindsym $mod+Return  exec $terminal
+bindsym $mod+Shift+q kill
+bindsym $mod+F2 exec google-chrome-stable &
+bindsym $mod+F1 exec firefox &
+bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/config
+
+assign [class="Firefox"] 2
+assign [class="google-chrome-stable"] 2
+assign [class="Google-chrome"] 2
+assign [class="Tor Browser"] 4
+assign [class="pycharm"] 3
+assign [class="webstorm"] 3
+
+
+# lock screen
+bindsym $mod+l exec "i3lock-fancy -gp -t \\"What's the Password, My Dude?\\""
+# focus
+bindsym $mod+Left      focus left
+bindsym $mod+Down      focus down
+bindsym $mod+Up        focus up
+bindsym $mod+Right     focus right
+
+# movement
+bindsym $mod+Shift+Left      move left
+bindsym $mod+Shift+Down      move down
+bindsym $mod+Shift+Up        move up
+bindsym $mod+Shift+Right     move right
+
+# splitting
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# fullscreen
+bindsym $mod+f fullscreen toggle
+
+# container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# floating
+floating_modifier $mod
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# parent/child focus
+bindsym $mod+p focus parent
+bindsym $mod+c focus child
+
+# resizing 
+mode "resize" {
+bindsym Left        resize shrink width  5 px or 5 ppt
+bindsym Down        resize grow   height 5 px or 5 ppt
+bindsym Up          resize shrink height 5 px or 5 ppt
+bindsym Right       resize grow   width  5 px or 5 ppt
+
+bindsym Shift+Left  resize shrink width  1 px or 1 ppt
+bindsym Shift+Down  resize grow   height 1 px or 1 ppt
+bindsym Shift+Up    resize shrink height 1 px or 1 ppt
+bindsym Shift+Right resize grow   width  1 px or 1 ppt
+
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+r mode "resize"
+
+
+bindsym Control+Shift+r restart
+bindsym $mod+Shift+e exit
+bindsym $mod+Shift+c reload
+
+# Gaps
+gaps inner 5
+gaps outer 5
+
+bindsym $mod+minus       gaps inner all minus 5
+bindsym $mod+plus        gaps inner all plus  5
+bindsym $mod+Shift+minus gaps outer all minus 5
+bindsym $mod+Shift+plus  gaps outer all plus  5
+
+
+# Workspaces (including window movement)
+
+# movement
+bindsym $mod+Shift+1   move container to workspace $workspace1
+bindsym $mod+Shift+2   move container to workspace $workspace2
+bindsym $mod+Shift+3   move container to workspace $workspace3
+bindsym $mod+Shift+4   move container to workspace $workspace4
+bindsym $mod+Shift+5   move container to workspace $workspace5
+bindsym $mod+Shift+6   move container to workspace $workspace6
+bindsym $mod+Shift+7   move container to workspace $workspace7
+bindsym $mod+Shift+8   move container to workspace $workspace8
+bindsym $mod+Shift+9   move container to workspace $workspace9
+# active workspace
+bindsym $mod+1   workspace $workspace1
+bindsym $mod+2   workspace $workspace2
+bindsym $mod+3   workspace $workspace3
+bindsym $mod+4   workspace $workspace4
+bindsym $mod+5   workspace $workspace5
+bindsym $mod+6   workspace $workspace6
+bindsym $mod+7   workspace $workspace7
+bindsym $mod+8   workspace $workspace8
+bindsym $mod+9   workspace $workspace9
+
+
+
+# Pulse Audio Controls
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute   0 toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+
+
+# Media Player Controls
+bindsym XF86AudioStop exec --no-startup-id mpc clear && /home/reed/scripts/killm.sh ncmpcpp
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+
+
+# Autostart
+exec xrdb -merge ~/.Xresources
+exec --no-startup-id feh --bg-fill ~/Pictures/cybersam.jpg
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec        --no-startup-id nm-applet
+exec        --no-startup-id compton --config ~/.config/compton/compton/config -b
+
