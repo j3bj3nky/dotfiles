@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/var/log/journal/3d60aab19f4a46b7a30607aefa8df4d9'
-let g:netrw_dirhist_2='/usr/share/xsessions'
-let g:netrw_dirhist_3='/home/jeb/projects/lcthw'
